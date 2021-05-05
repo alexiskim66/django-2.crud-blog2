@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>{{blog.subject}}</h1>
+    {{blog.author}}
+    <br>
+    {{blog.date}}
+    <hr>
+    <div id="content">
+        {{blog.content}}
+    </div>
+
+    <br>
+    <a href="{% url 'edit' blog.id %}">Modify</a>
+    <br>
+    <a href="{% url 'delete' blog.id %}">Delete</a>
+
+
+{% endblock %}
+
+</html>

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>Month Information</h1>
+    
+    <div class="container">
+    {% for blog in objects%}
+        <h3 id="month">{{blog.subject}}</h3>
+        <div id="content">{{blog.brief}} <a href="{%url 'detail' blog.id %}">...more</a></div>
+        <br><br>
+    {% endfor %}
+    </div>
+
+    <div>
+        <a id="add" href="{% url 'new' %}">add month</a>
+    </div>
+
+{% endblock %}
